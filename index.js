@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+var port = process.env.PORT || 8080
 app.get('/', function(req, res) {
    res.sendfile('index.html');
 });
@@ -28,6 +28,6 @@ socket.on('dukamuchatsend', function(data) {
    });
 });
 
-http.listen(8080, function() {
-   console.log('listening on localhost:8080');
+http.listen(port, function() {
+   console.log('listening on localhost:'+port);
 });
