@@ -5,6 +5,9 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res) {
    res.sendfile('index.html');
 });
+app.get('/test',function(req,res){
+  return  res.send("Yes it is working").end().status(200);
+})
 
 io.on('connection', function(socket) {
    console.log('A user connected');
