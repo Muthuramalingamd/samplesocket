@@ -13,7 +13,7 @@
         #messages li:nth-child(odd) { background: #eee; }
       </style>
    </head>
-   <script src = "/socket.io/socket.io.js"></script>
+   <script src = "https://elastic-cray-ee43f4.netlify.app:8080/socket.io/socket.io.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <script>
@@ -32,7 +32,8 @@
     //       socket.emit('dukamuchatsend',{data:obj})
     //   }
       $(function () {
-    var socket = io('https://elastic-cray-ee43f4.netlify.app/');
+          console.log("hi ")
+    var socket = io();
  //   var socket = io.connect();
 console.log('check 1', socket.connected);
 socket.on('connect', function() {
